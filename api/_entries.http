@@ -1,0 +1,28 @@
+@baseUrl = http://localhost:3000/api
+
+### GET /api - 404
+GET {{baseUrl}}
+
+### GET /api/does-not-exist - 404
+GET {{baseUrl}}/does-not-exist
+
+###
+GET {{baseUrl}}/entries
+
+###
+POST {{baseUrl}}/entries
+Content-Type: application/json
+
+{
+  "text": "Another text",
+  "author": "John"
+}
+
+### DELETE
+
+DELETE {{baseUrl}}/entries
+Content-Type: application/json
+
+{
+  "_id": "6238504239de179b59e7deb2"
+}
