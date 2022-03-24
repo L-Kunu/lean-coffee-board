@@ -111,3 +111,4 @@ const EntryList = styled.ul`
   padding: 0;
   overflow-y: auto;
 `;
+
