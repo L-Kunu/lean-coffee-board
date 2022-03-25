@@ -16,7 +16,7 @@ export default function EntryForm({ onSubmit }) {
       <input
         name="text"
         id="text"
-        placeholder="Just some text ..."
+        placeholder="Add your contribution here ..."
         type="text"
         minLength={TEXT_MIN_LENGTH}
       />
@@ -43,17 +43,34 @@ const Form = styled.form`
   justify-content: space-between;
 
   input {
-    width: 100%;
-    margin-right: 20px;
-  }
+    flex: 1 1;
+    border: none;
+    outline: none;
+    ::placeholder {
+      color: #c8cbca;
+    }
 `;
 
 const PlusButton = styled.button`
   border-radius: 50%;
   line-height: 0;
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
   border: none;
+  margine: 4px;
+  padding-top: 4px;
+  font-size: 30px;
+
+  &:hover {
+    background-color: black;
+    color: white;
+    transition: 0.4s;
+  }
+  &:active {
+    background-color: black;
+    color: white;
+    transition: 0.4s;
+  }
 
   div {
     margin-top: -1px;
