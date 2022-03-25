@@ -18,13 +18,13 @@ export default function App() {
     refreshInterval: 1000,
   });
 
-  if (entriesError) return <h1>Sorry, could not fetch.</h1>;
+  if (entriesError) return <h1>Sorry, could not fetch... try again</h1>;
 
   return (
     <>
       {user.name ? (
         <BoardGrid>
-          <h1>Lean Coffee Board</h1>
+          <StyledHeader>Lean Coffee Board</StyledHeader>
           <EntryList role="list">
             {entries
               ? entries.map(
@@ -102,13 +102,24 @@ const BoardGrid = styled.div`
   height: 100vh;
 `;
 
+const StyledHeader = styled.h1`
+  background-color: #b5838d;
+  box-shadow: 0 4px 8px 0 rgb(39, 50, 47, 0.25);
+  color: white;
+  font-family: 'Sacramento', cursive;
+  font-size: 3.5rem;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+`;
+
 const EntryList = styled.ul`
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 100px;
   list-style: none;
-  padding: 0;
+  padding: 20;
   overflow-y: auto;
 `;
-
